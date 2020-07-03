@@ -1,20 +1,24 @@
 class Grocery {
-    groceryItem: string;
-    constructor(public item: string, public price: number, public quantity: number) {
-        this.groceryItem = item + " " + price + " " + quantity;
+    itemInfo: string;
+    constructor(public itemName: string, public price: string, public quantity: string) {
+        this.itemInfo = itemName + " " +  price + " " +  quantity;
     }
+    
 }
 
-interface Cart {
-    item: string;
-    price: number;
-    quantity: number;
+let cart = [];
+cart.push(new Grocery("Eggs","2.99","1"));
+cart.push(new Grocery("Milk","4.99","1"));
+cart.push(new Grocery("Bacon","7.99","1"));
+
+
+
+function displayCart(cart: string[]) {
+    for (let i of cart) {
+        console.log(i)
+    }
+    return "Hello, here is what is in your cart: " + cart;
 }
+//let shopper = ["item1", "item2", "item3"];
 
-function review(cart: Cart) {
-    return "Item: " + cart.item + " " + "Price: $" + cart.price + " " + "Quantity: "+ cart.quantity;
-}
-
-let basket = new Grocery("Eggs", 3.99, 1);
-
-document.body.textContent = review(basket);
+document.body.textContent = displayCart(cart);

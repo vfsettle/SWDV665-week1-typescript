@@ -1,9 +1,8 @@
 var Grocery = /** @class */ (function () {
-    function Grocery(itemName, price, quantity) {
-        this.itemName = itemName;
+    function Grocery(name, price, qty) {
+        this.name = name;
         this.price = price;
-        this.quantity = quantity;
-        this.itemInfo = itemName + " " + price + " " + quantity;
+        this.qty = qty;
     }
     return Grocery;
 }());
@@ -18,5 +17,4 @@ function displayCart(cart) {
     }
     return "Hello, here is what is in your cart: " + cart;
 }
-//let shopper = ["item1", "item2", "item3"];
 document.body.textContent = displayCart(cart);
